@@ -116,10 +116,10 @@ export default function TickerDetailPage({
   if (loading) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <div className="animate-pulse space-y-4">
-          <div className="h-8 bg-gray-200 rounded w-32" />
-          <div className="h-48 bg-gray-200 rounded-xl" />
-          <div className="h-48 bg-gray-200 rounded-xl" />
+        <div className="space-y-4">
+          <div className="h-8 w-32 animate-shimmer rounded" />
+          <div className="h-48 animate-shimmer rounded-xl" />
+          <div className="h-48 animate-shimmer rounded-xl" />
         </div>
       </div>
     );
@@ -142,7 +142,7 @@ export default function TickerDetailPage({
   const topMatch = matches[selectedMatch];
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="max-w-4xl mx-auto px-4 py-8 animate-fade-in">
       <Link
         href="/watchlist"
         className="text-sm text-blue-600 hover:text-blue-700 mb-4 inline-block"
@@ -176,7 +176,7 @@ export default function TickerDetailPage({
           </Button>
         )}
         {onWatchlist && (
-          <span className="text-sm text-green-600 font-medium px-3 py-1.5 bg-green-50 rounded-lg">
+          <span className="text-sm text-green-600 font-medium px-3 py-1.5 bg-green-50 rounded-lg border border-green-200">
             On Watchlist
           </span>
         )}
@@ -208,16 +208,16 @@ export default function TickerDetailPage({
         </p>
 
         {matchLoading ? (
-          <div className="animate-pulse space-y-4">
+          <div className="space-y-4">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="h-32 bg-gray-200 rounded-xl" />
+              <div key={i} className="h-32 animate-shimmer rounded-xl" />
             ))}
           </div>
         ) : matches.length > 0 ? (
           <div className="space-y-6">
             {/* Top match insight */}
             {topMatch && (
-              <div>
+              <div className="animate-fade-in-up">
                 <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-3">
                   Top Match Insight
                 </h3>
@@ -239,14 +239,14 @@ export default function TickerDetailPage({
 
             {/* Match selector tabs */}
             {matches.length > 1 && (
-              <div className="flex gap-2 overflow-x-auto pb-2">
+              <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
                 {matches.slice(0, 5).map((m, idx) => (
                   <button
                     key={m.scenarioId}
                     onClick={() => setSelectedMatch(idx)}
-                    className={`px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${
+                    className={`px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
                       selectedMatch === idx
-                        ? "bg-blue-100 text-blue-700"
+                        ? "bg-blue-100 text-blue-700 shadow-sm"
                         : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                     }`}
                   >

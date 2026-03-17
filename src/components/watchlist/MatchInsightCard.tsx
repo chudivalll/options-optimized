@@ -40,20 +40,27 @@ export default function MatchInsightCard({
       ? "bg-red-50 border-red-200"
       : "bg-gray-50 border-gray-200";
 
-  const directionArrow =
-    outcomeData.actualDirection === "bullish"
-      ? "↑"
-      : outcomeData.actualDirection === "bearish"
-      ? "↓"
-      : "→";
-
   return (
     <Card>
       <CardContent className="p-4">
         <div className={`rounded-lg border p-4 mb-4 ${directionBg}`}>
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
-              <span className={`text-2xl ${directionColor}`}>{directionArrow}</span>
+              <span className={`${directionColor}`}>
+                {outcomeData.actualDirection === "bullish" ? (
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                  </svg>
+                ) : outcomeData.actualDirection === "bearish" ? (
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 4.5l15 15m0 0V8.25m0 11.25H8.25" />
+                  </svg>
+                ) : (
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                )}
+              </span>
               <div>
                 <p className={`font-semibold ${directionColor}`}>
                   Historical outcome was {outcomeData.actualDirection}
@@ -65,7 +72,7 @@ export default function MatchInsightCard({
             </div>
             <div className="text-right">
               <p className="text-sm text-gray-500">Match</p>
-              <p className="text-lg font-bold">{Math.round(similarity)}%</p>
+              <p className="text-lg font-bold font-mono">{Math.round(similarity)}%</p>
             </div>
           </div>
 
@@ -75,7 +82,7 @@ export default function MatchInsightCard({
               <div key={tf} className="text-center">
                 <p className="text-xs text-gray-500">{getTimeframeLabel(tf)}</p>
                 <p
-                  className={`text-sm font-bold ${
+                  className={`text-sm font-bold font-mono ${
                     (move as number) >= 0 ? "text-green-600" : "text-red-600"
                   }`}
                 >
@@ -95,7 +102,7 @@ export default function MatchInsightCard({
             {outcomeData.optimalStrategies.map((s) => (
               <span
                 key={s}
-                className="px-2 py-0.5 bg-blue-50 text-blue-700 rounded text-xs font-medium"
+                className="px-2.5 py-0.5 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold border border-blue-200"
               >
                 {s}
               </span>
@@ -106,7 +113,7 @@ export default function MatchInsightCard({
         <div className="flex items-center justify-between mb-3">
           <div>
             <p className="text-xs text-gray-500 uppercase tracking-wide">Best Return</p>
-            <p className="text-lg font-bold text-gray-900">
+            <p className="text-lg font-bold text-gray-900 font-mono">
               {outcomeData.bestContractReturn}%
             </p>
           </div>

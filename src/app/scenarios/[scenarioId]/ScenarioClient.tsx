@@ -151,6 +151,9 @@ export default function ScenarioClient({
     }
   }
 
+  const steps: Step[] = ["setup", "predict", "reveal"];
+  const currentIdx = steps.indexOf(step);
+
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <Link
@@ -196,18 +199,24 @@ export default function ScenarioClient({
 
       {/* Step indicator */}
       <div className="flex items-center gap-2 mb-8">
-        {(["setup", "predict", "reveal"] as Step[]).map((s, idx) => (
+        {steps.map((s, idx) => (
           <div key={s} className="flex items-center gap-2">
             <div
-              className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
+              className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all ${
                 step === s
-                  ? "bg-blue-600 text-white"
-                  : idx < ["setup", "predict", "reveal"].indexOf(step)
-                  ? "bg-green-600 text-white"
+                  ? "bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-[0_0_10px_rgba(59,130,246,0.3)]"
+                  : idx < currentIdx
+                  ? "bg-gradient-to-br from-green-500 to-green-600 text-white"
                   : "bg-gray-200 text-gray-500"
               }`}
             >
-              {idx + 1}
+              {idx < currentIdx ? (
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+              ) : (
+                idx + 1
+              )}
             </div>
             <span
               className={`text-sm font-medium ${
@@ -216,14 +225,16 @@ export default function ScenarioClient({
             >
               {s.charAt(0).toUpperCase() + s.slice(1)}
             </span>
-            {idx < 2 && <div className="w-8 h-px bg-gray-300" />}
+            {idx < 2 && (
+              <div className={`w-8 h-0.5 rounded-full ${idx < currentIdx ? "bg-green-400" : "bg-gray-300"}`} />
+            )}
           </div>
         ))}
       </div>
 
       {/* STEP 1: Setup */}
       {step === "setup" && (
-        <div className="space-y-6">
+        <div className="space-y-6 animate-fade-in">
           {/* Narrative */}
           <Card>
             <CardHeader>
@@ -267,7 +278,7 @@ export default function ScenarioClient({
 
       {/* STEP 2: Predict */}
       {step === "predict" && (
-        <div className="space-y-6">
+        <div className="space-y-6 animate-fade-in">
           <Card>
             <CardHeader>
               <h2 className="text-lg font-semibold">Your Prediction</h2>
@@ -283,18 +294,30 @@ export default function ScenarioClient({
                     <button
                       key={d}
                       onClick={() => setDirection(d)}
-                      className={`p-3 rounded-lg border-2 text-center transition-colors ${
+                      className={`p-3 rounded-lg border-2 text-center transition-all ${
                         direction === d
                           ? d === "bullish"
-                            ? "border-green-500 bg-green-50 text-green-700"
+                            ? "border-green-500 bg-green-50 text-green-700 shadow-sm"
                             : d === "bearish"
-                            ? "border-red-500 bg-red-50 text-red-700"
-                            : "border-gray-500 bg-gray-50 text-gray-700"
+                            ? "border-red-500 bg-red-50 text-red-700 shadow-sm"
+                            : "border-gray-500 bg-gray-50 text-gray-700 shadow-sm"
                           : "border-gray-200 hover:border-gray-300"
                       }`}
                     >
-                      <div className="text-2xl mb-1">
-                        {d === "bullish" ? "↑" : d === "bearish" ? "↓" : "→"}
+                      <div className="mb-1">
+                        {d === "bullish" ? (
+                          <svg className="w-6 h-6 mx-auto text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                          </svg>
+                        ) : d === "bearish" ? (
+                          <svg className="w-6 h-6 mx-auto text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 4.5l15 15m0 0V8.25m0 11.25H8.25" />
+                          </svg>
+                        ) : (
+                          <svg className="w-6 h-6 mx-auto text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                          </svg>
+                        )}
                       </div>
                       <div className="text-sm font-medium capitalize">{d}</div>
                     </button>
@@ -321,9 +344,9 @@ export default function ScenarioClient({
                     <button
                       key={s}
                       onClick={() => setStrategy(s)}
-                      className={`p-2 rounded-lg border-2 text-sm font-medium transition-colors ${
+                      className={`p-2 rounded-lg border-2 text-sm font-medium transition-all ${
                         strategy === s
-                          ? "border-blue-500 bg-blue-50 text-blue-700"
+                          ? "border-blue-500 bg-blue-50 text-blue-700 shadow-sm"
                           : "border-gray-200 hover:border-gray-300 text-gray-700"
                       }`}
                     >
@@ -343,9 +366,9 @@ export default function ScenarioClient({
                     <button
                       key={t}
                       onClick={() => setTimeframe(t)}
-                      className={`p-2 rounded-lg border-2 text-sm font-medium transition-colors ${
+                      className={`p-2 rounded-lg border-2 text-sm font-medium transition-all ${
                         timeframe === t
-                          ? "border-blue-500 bg-blue-50 text-blue-700"
+                          ? "border-blue-500 bg-blue-50 text-blue-700 shadow-sm"
                           : "border-gray-200 hover:border-gray-300 text-gray-700"
                       }`}
                     >
@@ -383,7 +406,7 @@ export default function ScenarioClient({
                   value={reasoning}
                   onChange={(e) => setReasoning(e.target.value)}
                   rows={3}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none resize-none"
+                  className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none resize-none transition-colors"
                   placeholder="What's your thesis? What data supports your prediction?"
                 />
               </div>
@@ -407,14 +430,23 @@ export default function ScenarioClient({
 
       {/* STEP 3: Reveal */}
       {step === "reveal" && prediction && (
-        <div className="space-y-6">
+        <div className="space-y-6 animate-fade-in-up">
           {/* Score */}
           <Card>
             <CardContent className="text-center py-8">
-              <div className="w-24 h-24 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl font-bold text-blue-700">
-                  {prediction.score}
-                </span>
+              <div
+                className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4"
+                style={{
+                  background: `conic-gradient(${
+                    prediction.score >= 80 ? "#22c55e" : prediction.score >= 60 ? "#3b82f6" : prediction.score >= 40 ? "#eab308" : "#ef4444"
+                  } ${(prediction.score / prediction.maxScore) * 360}deg, #e5e7eb ${(prediction.score / prediction.maxScore) * 360}deg)`,
+                }}
+              >
+                <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center">
+                  <span className="text-3xl font-bold text-gray-900 font-mono">
+                    {prediction.score}
+                  </span>
+                </div>
               </div>
               <p className="text-gray-600 mb-2">
                 out of {prediction.maxScore} points
@@ -511,7 +543,7 @@ export default function ScenarioClient({
                   <div key={tf} className="text-center">
                     <p className="text-sm text-gray-500 mb-1">{getTimeframeLabel(tf)}</p>
                     <p
-                      className={`text-2xl font-bold ${
+                      className={`text-2xl font-bold font-mono ${
                         (move as number) >= 0 ? "text-green-600" : "text-red-600"
                       }`}
                     >
@@ -532,7 +564,7 @@ export default function ScenarioClient({
               <div className="prose prose-gray max-w-none mb-4">
                 <ReactMarkdown>{scenario.revealNarrative}</ReactMarkdown>
               </div>
-              <div className="bg-blue-50 rounded-lg p-4">
+              <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
                 <h3 className="font-semibold text-blue-900 mb-2">Expert Analysis</h3>
                 <p className="text-sm text-blue-800">
                   {scenario.outcomeData.explanation}
@@ -567,13 +599,17 @@ function ScoreRow({
   return (
     <div className="flex items-center gap-3">
       <span className="text-sm text-gray-600 w-40">{label}</span>
-      <div className="flex-1 bg-gray-200 rounded-full h-2">
+      <div className="flex-1 bg-gray-200 rounded-full h-2.5 overflow-hidden">
         <div
-          className={`h-2 rounded-full ${score >= 0 ? "bg-blue-600" : "bg-red-400"}`}
+          className={`h-2.5 rounded-full transition-all duration-500 ${
+            score >= 0
+              ? "bg-gradient-to-r from-blue-500 to-blue-600"
+              : "bg-gradient-to-r from-red-400 to-red-500"
+          }`}
           style={{ width: `${Math.min(100, pct)}%` }}
         />
       </div>
-      <span className="text-sm font-medium text-gray-900 w-16 text-right">
+      <span className="text-sm font-medium font-mono text-gray-900 w-16 text-right">
         {showSign && score > 0 ? "+" : ""}
         {score}/{max}
       </span>

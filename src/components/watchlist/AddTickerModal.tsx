@@ -54,8 +54,8 @@ export default function AddTickerModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <div className="fixed inset-0 bg-black/50" onClick={onClose} />
-      <div className="relative bg-white rounded-xl shadow-xl max-w-lg w-full mx-4 max-h-[80vh] flex flex-col">
+      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
+      <div className="relative bg-white rounded-xl shadow-xl max-w-lg w-full mx-4 max-h-[80vh] flex flex-col animate-scale-in">
         <div className="p-4 border-b border-gray-200">
           <div className="flex justify-between items-center mb-3">
             <h2 className="text-lg font-semibold text-gray-900">Add to Watchlist</h2>
@@ -68,14 +68,19 @@ export default function AddTickerModal({
               </svg>
             </button>
           </div>
-          <input
-            type="text"
-            placeholder="Search by ticker, name, or sector..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm"
-            autoFocus
-          />
+          <div className="relative">
+            <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+            <input
+              type="text"
+              placeholder="Search by ticker, name, or sector..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full pl-9 pr-3 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition-colors"
+              autoFocus
+            />
+          </div>
         </div>
 
         <div className="overflow-y-auto flex-1 p-2">
@@ -106,11 +111,11 @@ export default function AddTickerModal({
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm font-medium text-gray-900">
+                    <p className="text-sm font-medium font-mono text-gray-900">
                       {formatCurrency(s.stockPrice)}
                     </p>
                     <p
-                      className={`text-xs font-medium ${
+                      className={`text-xs font-medium font-mono ${
                         s.priceChange30d >= 0 ? "text-green-600" : "text-red-600"
                       }`}
                     >

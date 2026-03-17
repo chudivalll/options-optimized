@@ -16,7 +16,10 @@ export default function MarketDataCard({ data }: { data: MarketData }) {
   return (
     <Card>
       <CardHeader>
-        <h2 className="text-lg font-semibold">Market Data</h2>
+        <div className="flex items-center gap-2">
+          <div className="w-1 h-5 bg-gradient-to-b from-blue-500 to-blue-600 rounded-full" />
+          <h2 className="text-lg font-semibold">Market Data</h2>
+        </div>
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -60,11 +63,18 @@ export function DataItem({
   value: string;
   color?: boolean;
 }) {
+  const borderColor =
+    color === undefined
+      ? "border-blue-200"
+      : color
+      ? "border-green-300"
+      : "border-red-300";
+
   return (
-    <div>
+    <div className={`border-l-2 ${borderColor} pl-3`}>
       <p className="text-xs text-gray-500 uppercase tracking-wide">{label}</p>
       <p
-        className={`text-sm font-semibold ${
+        className={`text-sm font-semibold font-mono ${
           color === undefined
             ? "text-gray-900"
             : color

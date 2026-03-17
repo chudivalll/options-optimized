@@ -29,6 +29,14 @@ export default async function LearnPage() {
     progressMap = Object.fromEntries(progress.map((p) => [p.lessonId, true]));
   }
 
+  const gradients = [
+    "from-blue-500 to-blue-600",
+    "from-indigo-500 to-indigo-600",
+    "from-violet-500 to-violet-600",
+    "from-purple-500 to-purple-600",
+    "from-fuchsia-500 to-fuchsia-600",
+  ];
+
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
@@ -46,14 +54,15 @@ export default async function LearnPage() {
           ).length;
           const progress = totalLessons > 0 ? (completedLessons / totalLessons) * 100 : 0;
           const isComplete = completedLessons === totalLessons && totalLessons > 0;
+          const gradient = gradients[idx % gradients.length];
 
           return (
             <Link key={mod.id} href={`/learn/${mod.id}`}>
               <Card hover className="mb-4">
                 <CardContent>
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <span className="text-blue-700 font-bold text-lg">
+                    <div className={`flex-shrink-0 w-12 h-12 bg-gradient-to-br ${gradient} rounded-xl flex items-center justify-center shadow-sm`}>
+                      <span className="text-white font-bold text-lg">
                         {String(idx + 1).padStart(2, "0")}
                       </span>
                     </div>
@@ -80,7 +89,7 @@ export default async function LearnPage() {
                       </p>
                       <div className="flex items-center gap-3">
                         <ProgressBar value={progress} className="flex-1" />
-                        <span className="text-sm text-gray-500 whitespace-nowrap">
+                        <span className="text-sm text-gray-500 whitespace-nowrap font-mono">
                           {completedLessons}/{totalLessons} lessons
                         </span>
                       </div>

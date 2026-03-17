@@ -26,7 +26,7 @@ export default function WatchlistCard({
   onRemove,
 }: WatchlistCardProps) {
   return (
-    <div className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-md transition-shadow">
+    <div className="bg-white rounded-xl border border-gray-200/60 shadow-[0_1px_3px_rgba(0,0,0,0.04)] p-4 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
       <div className="flex justify-between items-start mb-3">
         <Link href={`/watchlist/${ticker}`} className="group">
           <div className="flex items-center gap-2">
@@ -53,11 +53,11 @@ export default function WatchlistCard({
 
       <div className="flex justify-between items-end">
         <div>
-          <p className="text-lg font-semibold text-gray-900">
+          <p className="text-lg font-semibold text-gray-900 font-mono">
             {formatCurrency(stockPrice)}
           </p>
           <p
-            className={`text-sm font-medium ${
+            className={`text-sm font-medium font-mono ${
               priceChange30d >= 0 ? "text-green-600" : "text-red-600"
             }`}
           >
@@ -70,19 +70,19 @@ export default function WatchlistCard({
             <div className="text-right">
               <div className="flex items-center gap-1.5">
                 <div
-                  className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white ${
+                  className={`w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold text-white ring-2 ring-offset-2 ${
                     topMatchScore >= 70
-                      ? "bg-green-500"
+                      ? "bg-gradient-to-br from-green-400 to-green-600 ring-green-300"
                       : topMatchScore >= 50
-                      ? "bg-yellow-500"
-                      : "bg-gray-400"
+                      ? "bg-gradient-to-br from-yellow-400 to-yellow-600 ring-yellow-300"
+                      : "bg-gradient-to-br from-gray-300 to-gray-500 ring-gray-300"
                   }`}
                 >
                   {Math.round(topMatchScore)}
                 </div>
               </div>
               {topMatchName && (
-                <p className="text-xs text-gray-500 mt-1 max-w-[120px] truncate">
+                <p className="text-xs text-gray-500 mt-1.5 max-w-[120px] truncate">
                   {topMatchName}
                 </p>
               )}

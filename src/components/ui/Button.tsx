@@ -15,15 +15,15 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
+    "inline-flex items-center justify-center font-medium rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-md hover:-translate-y-px active:translate-y-0 active:shadow-sm";
 
   const variants = {
-    primary: "bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500",
+    primary: "bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 focus:ring-blue-500",
     secondary: "bg-gray-800 text-white hover:bg-gray-700 focus:ring-gray-500",
     outline:
       "border-2 border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-gray-500",
-    ghost: "text-gray-700 hover:bg-gray-100 focus:ring-gray-500",
-    danger: "bg-red-600 text-white hover:bg-red-700 focus:ring-red-500",
+    ghost: "text-gray-700 hover:bg-gray-100 focus:ring-gray-500 hover:shadow-none",
+    danger: "bg-gradient-to-r from-red-600 to-red-700 text-white hover:from-red-700 hover:to-red-800 focus:ring-red-500",
   };
 
   const sizes = {

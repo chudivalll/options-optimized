@@ -19,6 +19,13 @@ export default async function ScenariosPage() {
     },
   });
 
+  const difficultyBorder = (d: string) =>
+    d === "beginner"
+      ? "border-l-green-400"
+      : d === "intermediate"
+      ? "border-l-yellow-400"
+      : "border-l-red-400";
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       <div className="mb-8">
@@ -31,7 +38,7 @@ export default async function ScenariosPage() {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {scenarios.map((scenario) => (
           <Link key={scenario.id} href={`/scenarios/${scenario.id}`}>
-            <Card hover className="h-full">
+            <Card hover className={`h-full border-l-4 ${difficultyBorder(scenario.difficulty)}`} >
               <CardContent>
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-2xl font-bold text-gray-900">

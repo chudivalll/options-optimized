@@ -56,12 +56,12 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4">
-      <div className="w-full max-w-md">
-        <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8">
+    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/30">
+      <div className="w-full max-w-md animate-scale-in">
+        <div className="bg-white rounded-2xl shadow-lg border border-gray-200/60 p-8">
           <div className="text-center mb-8">
-            <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <span className="text-white font-bold text-lg">OQ</span>
+            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-[0_0_16px_rgba(59,130,246,0.3)]">
+              <span className="text-white font-bold text-lg">OO</span>
             </div>
             <h1 className="text-2xl font-bold text-gray-900">
               {isRegister ? "Create Account" : "Welcome Back"}
@@ -83,7 +83,7 @@ export default function LoginPage() {
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                  className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
                   placeholder="Your name"
                 />
               </div>
@@ -98,7 +98,7 @@ export default function LoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
                 placeholder="you@example.com"
               />
             </div>
@@ -112,14 +112,14 @@ export default function LoginPage() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
                 placeholder="At least 6 characters"
                 minLength={6}
               />
             </div>
 
             {error && (
-              <p className="text-red-600 text-sm bg-red-50 p-3 rounded-lg">{error}</p>
+              <p className="text-red-600 text-sm bg-red-50 p-3 rounded-lg border border-red-200">{error}</p>
             )}
 
             <Button
@@ -142,7 +142,7 @@ export default function LoginPage() {
                 setIsRegister(!isRegister);
                 setError("");
               }}
-              className="text-sm text-blue-600 hover:text-blue-700"
+              className="text-sm text-blue-600 hover:text-blue-700 transition-colors"
             >
               {isRegister
                 ? "Already have an account? Sign in"

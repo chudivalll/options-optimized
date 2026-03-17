@@ -37,7 +37,7 @@ export default function ScannerPage() {
   }, [selectedSector, sortBy]);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
+    <div className="max-w-6xl mx-auto px-4 py-8 animate-fade-in">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-gray-900">Market Scanner</h1>
         <p className="text-gray-500 mt-1">
@@ -56,15 +56,22 @@ export default function ScannerPage() {
       </div>
 
       <div className="mb-4">
-        <p className="text-sm text-gray-500">
-          {loading ? "Loading..." : `${snapshots.length} ticker${snapshots.length !== 1 ? "s" : ""} found`}
-        </p>
+        {loading ? (
+          <div className="h-5 w-32 animate-shimmer rounded" />
+        ) : (
+          <p className="text-sm text-gray-500">
+            <span className="inline-flex items-center gap-1.5 bg-gray-100 px-2 py-0.5 rounded-full text-xs font-semibold text-gray-700 border border-gray-200">
+              {snapshots.length}
+            </span>
+            <span className="ml-2">ticker{snapshots.length !== 1 ? "s" : ""} found</span>
+          </p>
+        )}
       </div>
 
       {loading ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={i} className="h-32 bg-gray-200 rounded-xl animate-pulse" />
+            <div key={i} className="h-32 animate-shimmer rounded-xl" />
           ))}
         </div>
       ) : (
