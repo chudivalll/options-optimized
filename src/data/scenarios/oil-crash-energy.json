@@ -1,0 +1,100 @@
+{
+  "slug": "oil-crash-energy",
+  "title": "Oil Price War Meets Pandemic: Exxon Mobil",
+  "company": "XOM",
+  "companyName": "Exxon Mobil Corporation",
+  "eventDate": "2020-03-02",
+  "difficulty": "intermediate",
+  "category": "sector",
+  "setupNarrative": "It's March 2, 2020. Exxon Mobil is trading at $52.18, already down 18% from its January highs as COVID-19 fears have weighed on oil demand projections. WTI crude oil has fallen from $63 to $47 per barrel. But the real storm hasn't hit yet. OPEC+ is meeting this week in Vienna to discuss production cuts in response to the demand shock, and the market is counting on Saudi Arabia and Russia to agree on reducing output to support prices.\n\nExxon, the largest publicly traded oil company in the world, has been struggling even before COVID. The stock has dramatically underperformed the S&P 500 over the past decade, with critics pointing to overinvestment in mega-projects and a refusal to diversify into renewables. The company still pays a generous 6.2% dividend yield, but analysts are beginning to question whether it can maintain the payout if oil stays below $50. Exxon was removed from the Dow Jones Industrial Average in August 2020 after 92 years -- a symbolic blow.\n\nThe options market reflects growing fear but not outright panic. Implied volatility on XOM has jumped to 42%, up from a typical 22-25%, and the put/call ratio has risen to 1.08. Energy sector ETFs are seeing heavy put volume. However, the consensus expectation is that OPEC+ will cut production by 1-1.5 million barrels per day, putting a floor under oil prices. The big question: what happens if the OPEC+ talks break down?",
+  "marketData": {
+    "stockPrice": 52.18,
+    "priceChange30d": -14.5,
+    "marketCap": "221B",
+    "sector": "Energy",
+    "sectorPerformance": -15.8,
+    "spyPerformance": -8.2
+  },
+  "greeksData": {
+    "contracts": [
+      {
+        "type": "put",
+        "strike": 48,
+        "expiration": "2020-04-17",
+        "premium": 2.65,
+        "delta": -0.28,
+        "gamma": 0.02,
+        "theta": -0.05,
+        "vega": 0.08,
+        "iv": 0.44
+      },
+      {
+        "type": "put",
+        "strike": 42,
+        "expiration": "2020-04-17",
+        "premium": 1.15,
+        "delta": -0.13,
+        "gamma": 0.01,
+        "theta": -0.03,
+        "vega": 0.06,
+        "iv": 0.46
+      },
+      {
+        "type": "put",
+        "strike": 45,
+        "expiration": "2020-05-15",
+        "premium": 2.80,
+        "delta": -0.24,
+        "gamma": 0.01,
+        "theta": -0.03,
+        "vega": 0.09,
+        "iv": 0.43
+      },
+      {
+        "type": "call",
+        "strike": 56,
+        "expiration": "2020-04-17",
+        "premium": 1.75,
+        "delta": 0.22,
+        "gamma": 0.02,
+        "theta": -0.04,
+        "vega": 0.07,
+        "iv": 0.42
+      }
+    ]
+  },
+  "volatilityData": {
+    "iv30": 42.1,
+    "iv60": 38.5,
+    "hv30": 30.4,
+    "ivRank": 82,
+    "ivPercentile": 88
+  },
+  "sentimentData": {
+    "headlines": [
+      "OPEC+ to meet in Vienna amid growing pressure to cut production",
+      "Oil demand projections slashed as COVID-19 spreads beyond China",
+      "Exxon Mobil dividend yield rises to 6.2% as stock slides; payout questioned",
+      "Energy stocks enter bear market territory, down 20% from January highs"
+    ],
+    "analystRating": "Hold",
+    "putCallRatio": 1.08
+  },
+  "revealNarrative": "The OPEC+ meeting on March 5-6 ended in spectacular failure. Russia refused to cut production, and Saudi Arabia retaliated by announcing it would flood the market with oil, slashing its official selling prices by $6-8 per barrel and pledging to increase production to 12.3 million barrels per day. The result was an all-out oil price war layered on top of a global pandemic.\n\nOn March 9, oil prices crashed 25% -- the largest single-day decline since the 1991 Gulf War. WTI crude fell from $41 to $31. Exxon Mobil gapped down 12% at the open and continued falling as the dual crisis intensified. By the end of March, XOM had fallen to $31.45 -- a 39.7% decline from our entry point. The $48 April puts, purchased for $2.65, surged to over $16.55 in intrinsic value -- a return of 525%. The $42 April puts went from $1.15 to over $10.55, returning 817%.\n\nThe carnage continued into April as oil prices briefly went negative for the first time in history on April 20 (WTI May futures settled at -$37.63). Exxon's stock bottomed near $31 in late March but remained under severe pressure. The company would eventually cut its capital spending by 30% and was forced to borrow to maintain its dividend. This scenario illustrates how sector-specific catalysts (OPEC breakdown) combined with macro shocks (pandemic) can create cascading selloffs that exceed even elevated volatility expectations. Bear put spreads were the optimal risk-defined strategy for capturing the decline.",
+  "outcomeData": {
+    "actualDirection": "bearish",
+    "priceMoves": {
+      "1_week": -22.8,
+      "1_month": -39.7,
+      "3_months": -32.5
+    },
+    "optimalStrategies": [
+      "Bear Put Spread",
+      "Long Puts",
+      "Put Ratio Spread"
+    ],
+    "optimalTimeframe": "1_month",
+    "bestContractReturn": 817,
+    "explanation": "The collapse of OPEC+ talks triggered an oil price war on top of the COVID-19 demand shock, creating a perfect storm for energy stocks. Exxon fell nearly 40% in a month as oil prices crashed from $47 to below $20. The $42 strike April puts returned 817% as the stock plunged through multiple support levels. Bear put spreads offered an excellent risk/reward ratio by defining the maximum risk while capturing much of the downside. This scenario teaches that when multiple bearish catalysts converge in a single sector, the resulting move can dramatically exceed what options markets price in."
+  }
+}

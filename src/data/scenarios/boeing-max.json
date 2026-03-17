@@ -1,0 +1,100 @@
+{
+  "slug": "boeing-max",
+  "title": "737 MAX Crisis: Boeing's Darkest Hour",
+  "company": "BA",
+  "companyName": "The Boeing Company",
+  "eventDate": "2019-03-08",
+  "difficulty": "advanced",
+  "category": "crisis",
+  "setupNarrative": "It's March 8, 2019. Boeing is trading at $422.54, near its all-time high. The aerospace giant is the most heavily weighted stock in the Dow Jones Industrial Average and a crown jewel of American manufacturing. The 737 MAX, Boeing's newest and most fuel-efficient narrow-body aircraft, has been a massive commercial success with over 5,000 orders -- the fastest-selling plane in Boeing's history. Revenue is at record levels, and the stock has nearly doubled in two years.\n\nHowever, a shadow hangs over the company. On October 29, 2018, Lion Air Flight 610, a 737 MAX 8, crashed into the Java Sea 13 minutes after takeoff, killing all 189 people aboard. Investigators pointed to a new automated flight-control system called MCAS (Maneuvering Characteristics Augmentation System) that repeatedly pushed the nose down based on a faulty sensor reading. Boeing issued a service bulletin but insisted the plane was safe, and the FAA agreed, keeping the MAX in service worldwide.\n\nThe options market shows only modest concern. Implied volatility is at 24%, slightly above the 20% historical average but far from crisis levels. Put volume has ticked up but the put/call ratio remains below 1.0. Analysts overwhelmingly rate Boeing a Buy, with an average price target of $460. The consensus view is that the Lion Air crash was a one-off training issue and that Boeing has addressed it. Tomorrow, Ethiopian Airlines Flight 302 will either validate that confidence or shatter it forever.",
+  "marketData": {
+    "stockPrice": 422.54,
+    "priceChange30d": 8.6,
+    "marketCap": "239B",
+    "sector": "Aerospace & Defense",
+    "sectorPerformance": 5.3,
+    "spyPerformance": 4.8
+  },
+  "greeksData": {
+    "contracts": [
+      {
+        "type": "put",
+        "strike": 400,
+        "expiration": "2019-04-18",
+        "premium": 5.40,
+        "delta": -0.20,
+        "gamma": 0.003,
+        "theta": -0.18,
+        "vega": 0.38,
+        "iv": 0.25
+      },
+      {
+        "type": "put",
+        "strike": 375,
+        "expiration": "2019-04-18",
+        "premium": 2.85,
+        "delta": -0.10,
+        "gamma": 0.002,
+        "theta": -0.11,
+        "vega": 0.28,
+        "iv": 0.26
+      },
+      {
+        "type": "call",
+        "strike": 440,
+        "expiration": "2019-04-18",
+        "premium": 7.20,
+        "delta": 0.32,
+        "gamma": 0.003,
+        "theta": -0.22,
+        "vega": 0.40,
+        "iv": 0.24
+      },
+      {
+        "type": "put",
+        "strike": 350,
+        "expiration": "2019-06-21",
+        "premium": 5.10,
+        "delta": -0.10,
+        "gamma": 0.001,
+        "theta": -0.06,
+        "vega": 0.35,
+        "iv": 0.26
+      }
+    ]
+  },
+  "volatilityData": {
+    "iv30": 24.3,
+    "iv60": 23.1,
+    "hv30": 20.8,
+    "ivRank": 35,
+    "ivPercentile": 38
+  },
+  "sentimentData": {
+    "headlines": [
+      "Boeing shares near all-time high as 737 MAX orders top 5,000",
+      "Boeing issues service bulletin after Lion Air crash but says 737 MAX safe",
+      "FAA declines to ground 737 MAX fleet after Lion Air accident investigation",
+      "Analysts raise Boeing targets; stock seen reaching $500 on strong backlog"
+    ],
+    "analystRating": "Strong Buy",
+    "putCallRatio": 0.68
+  },
+  "revealNarrative": "On March 10, 2019, Ethiopian Airlines Flight 302, another 737 MAX 8, crashed six minutes after takeoff from Addis Ababa, killing all 157 people aboard. The horrifying parallels to the Lion Air crash were immediately apparent -- both involved the MCAS system pushing the nose down. Within days, aviation authorities worldwide grounded the entire 737 MAX fleet. The FAA, under intense pressure, was the last major regulator to act, grounding the fleet on March 13.\n\nBoeing's stock plunged. From $422.54 on March 8, it fell to $362.17 by March 11 -- an 14.3% drop in one trading day, wiping out $29 billion in market cap. The $400 April puts, purchased for $5.40, surged to over $38 as the stock crashed through the strike -- a return of over 600%. The $375 April puts went from $2.85 to over $13. By June, as the grounding dragged on and Boeing halted MAX deliveries, the stock had fallen to $345, making the $350 June puts profitable as well.\n\nThe 737 MAX would remain grounded for nearly two years -- until November 2020 -- the longest grounding of a U.S. airliner in history. Boeing would eventually take over $20 billion in charges related to the crisis and face criminal fraud charges. The stock wouldn't recover to its pre-crisis level for years. This scenario starkly illustrates tail risk in individual stocks: even a blue-chip Dow component can face catastrophic, overnight loss when a safety crisis strikes. The low implied volatility before the crash meant puts were extremely cheap relative to the risk that materialized.",
+  "outcomeData": {
+    "actualDirection": "bearish",
+    "priceMoves": {
+      "1_week": -14.3,
+      "1_month": -12.8,
+      "3_months": -18.4
+    },
+    "optimalStrategies": [
+      "Long Puts",
+      "Bear Put Spread",
+      "Put Backspread"
+    ],
+    "optimalTimeframe": "1_week",
+    "bestContractReturn": 604,
+    "explanation": "The second 737 MAX crash triggered a global grounding and an immediate 14% stock decline. The $400 strike April puts returned over 600% in days as the stock crashed through multiple strike prices. Low pre-crisis IV meant puts were cheap, creating extraordinary risk/reward for bearish positions. This scenario demonstrates the value of holding protective puts on companies with identifiable tail risks (known safety issues, regulatory scrutiny) and shows how a black swan event in a blue-chip stock can create enormous options profits when volatility is mispriced."
+  }
+}

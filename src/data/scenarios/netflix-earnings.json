@@ -1,0 +1,100 @@
+{
+  "slug": "netflix-earnings",
+  "title": "Streaming Wars: Netflix Q4 2021 Earnings",
+  "company": "NFLX",
+  "companyName": "Netflix Inc.",
+  "eventDate": "2022-01-17",
+  "difficulty": "intermediate",
+  "category": "earnings",
+  "setupNarrative": "It's January 17, 2022. Netflix is trading at $525.69, down about 16% from its November 2021 all-time high of $700. The streaming giant is set to report Q4 2021 earnings on January 20. For over a decade, Netflix has been the undisputed king of streaming, but the competitive landscape has shifted dramatically with Disney+, HBO Max, Amazon Prime Video, and Apple TV+ all fighting for subscribers.\n\nNetflix guided for 8.5 million new subscribers in Q4 2021, but analysts are skeptical. The company's subscriber growth has decelerated sharply since the pandemic-fueled boom of 2020, and the law of large numbers is catching up with 222 million global subscribers. Content costs continue to balloon, with Netflix spending $17 billion on content in 2021. Meanwhile, competition is intensifying -- Disney+ alone has added over 118 million subscribers in just two years.\n\nThe options market is pricing in a significant earnings move. At-the-money straddles imply about a 9% move, slightly above Netflix's average earnings move of 8.2% over the past eight quarters. Implied volatility on near-term options has spiked to 62%, well above the 30-day historical volatility of 38%. Several prominent growth fund managers have trimmed their Netflix positions in recent 13F filings. The put/call ratio has climbed to 1.15, suggesting bearish positioning. Is the pessimism overdone, or is Netflix about to deliver a wake-up call to growth investors?",
+  "marketData": {
+    "stockPrice": 525.69,
+    "priceChange30d": -8.4,
+    "marketCap": "233B",
+    "sector": "Communication Services",
+    "sectorPerformance": -4.2,
+    "spyPerformance": -2.1
+  },
+  "greeksData": {
+    "contracts": [
+      {
+        "type": "put",
+        "strike": 500,
+        "expiration": "2022-01-28",
+        "premium": 15.80,
+        "delta": -0.35,
+        "gamma": 0.004,
+        "theta": -1.85,
+        "vega": 0.52,
+        "iv": 0.68
+      },
+      {
+        "type": "put",
+        "strike": 450,
+        "expiration": "2022-02-18",
+        "premium": 14.20,
+        "delta": -0.22,
+        "gamma": 0.002,
+        "theta": -0.95,
+        "vega": 0.48,
+        "iv": 0.62
+      },
+      {
+        "type": "call",
+        "strike": 560,
+        "expiration": "2022-01-28",
+        "premium": 12.40,
+        "delta": 0.28,
+        "gamma": 0.003,
+        "theta": -1.72,
+        "vega": 0.50,
+        "iv": 0.65
+      },
+      {
+        "type": "put",
+        "strike": 400,
+        "expiration": "2022-02-18",
+        "premium": 6.85,
+        "delta": -0.11,
+        "gamma": 0.001,
+        "theta": -0.58,
+        "vega": 0.35,
+        "iv": 0.64
+      }
+    ]
+  },
+  "volatilityData": {
+    "iv30": 62.4,
+    "iv60": 51.8,
+    "hv30": 38.2,
+    "ivRank": 72,
+    "ivPercentile": 78
+  },
+  "sentimentData": {
+    "headlines": [
+      "Netflix faces subscriber growth concerns ahead of Q4 earnings",
+      "Disney+ reaches 118 million subscribers, intensifying streaming competition",
+      "Netflix content spending hits $17 billion in 2021 as costs spiral",
+      "Multiple hedge funds reduce Netflix holdings in Q3 13F filings"
+    ],
+    "analystRating": "Hold",
+    "putCallRatio": 1.15
+  },
+  "revealNarrative": "Netflix reported Q4 2021 earnings on January 20, and the results confirmed the bears' worst fears. The company added only 8.28 million subscribers, slightly below the 8.5 million guidance. More devastatingly, Netflix guided for just 2.5 million net adds in Q1 2022 -- less than half of the 3.98 million Wall Street expected. The stock plunged 21.8% in after-hours trading, opening at $397.50 the next morning.\n\nThe $500 strike January 28 puts, purchased for $15.80, surged to over $102 in intrinsic value at the open -- a return of 545%. The deeper out-of-the-money $400 February puts, bought for $6.85, went from far OTM to near-the-money in a single night and eventually moved well into the money. The $560 calls expired worthless, as expected in such a dramatic selloff. Implied volatility actually increased post-earnings for longer-dated options as the market priced in continued uncertainty about Netflix's growth trajectory.\n\nThis was only the beginning. Netflix would go on to report its first subscriber loss in over a decade in Q1 2022, sending the stock to $186 by May -- a 65% decline from our scenario entry point. The scenario illustrates a classic earnings torpedo: when a growth stock's narrative breaks, the move can far exceed what the options market implies. The elevated put/call ratio and hedge fund selling were genuine warning signs that the smart money was positioning for trouble.",
+  "outcomeData": {
+    "actualDirection": "bearish",
+    "priceMoves": {
+      "1_week": -23.2,
+      "1_month": -29.8,
+      "3_months": -64.6
+    },
+    "optimalStrategies": [
+      "Long Puts",
+      "Bear Put Spread",
+      "Put Calendar Spread"
+    ],
+    "optimalTimeframe": "1_week",
+    "bestContractReturn": 545,
+    "explanation": "Netflix's Q4 2021 earnings miss and weak Q1 2022 guidance triggered a 22% overnight gap down, exceeding the options-implied move of 9%. The $500 strike puts returned 545% in just three days. The elevated put/call ratio and deteriorating fundamentals were warning signs. This scenario teaches that when a growth stock's narrative breaks at earnings, the actual move can dramatically exceed implied volatility, and that paying attention to sentiment indicators like put/call ratios and institutional positioning can provide valuable edge."
+  }
+}

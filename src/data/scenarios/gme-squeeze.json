@@ -1,0 +1,101 @@
+{
+  "slug": "gme-squeeze",
+  "title": "The Mother of All Short Squeezes: GameStop",
+  "company": "GME",
+  "companyName": "GameStop Corp.",
+  "eventDate": "2021-01-11",
+  "difficulty": "advanced",
+  "category": "momentum",
+  "setupNarrative": "It's January 11, 2021. GameStop is trading at $19.94, up sharply from its 2020 lows near $3 but still far below its 2015 highs above $50. The brick-and-mortar video game retailer has been struggling for years against the digital distribution trend, and most of Wall Street has written it off. Short interest stands at a staggering 140% of the float -- meaning more shares are sold short than actually exist in circulation.\n\nBut something unusual is brewing. Ryan Cohen, the billionaire co-founder of Chewy, has been aggressively buying shares and just secured three board seats. On Reddit's r/WallStreetBets forum, a user known as DeepFuckingValue has been posting his GME position for months, building a cult following. The thesis: GameStop is deeply undervalued, the short interest creates a massive squeeze potential, and Cohen's involvement could transform the company.\n\nThe options chain tells an interesting story. Call open interest has been building aggressively, particularly at the $20-$40 strikes. Market makers who sold these calls are delta-hedging by buying shares, which is pushing the price higher, which forces more hedging -- a potential gamma squeeze on top of the short squeeze. Implied volatility is elevated at 105%, reflecting the uncertainty, but given what's about to unfold, even that dramatically underestimates the real risk. The stock has already doubled in the past two weeks. Is this the beginning or the end of the move?",
+  "marketData": {
+    "stockPrice": 19.94,
+    "priceChange30d": 51.2,
+    "marketCap": "1.4B",
+    "sector": "Specialty Retail",
+    "sectorPerformance": 4.2,
+    "spyPerformance": 1.8
+  },
+  "greeksData": {
+    "contracts": [
+      {
+        "type": "call",
+        "strike": 25,
+        "expiration": "2021-01-29",
+        "premium": 1.85,
+        "delta": 0.32,
+        "gamma": 0.06,
+        "theta": -0.12,
+        "vega": 0.04,
+        "iv": 1.15
+      },
+      {
+        "type": "call",
+        "strike": 40,
+        "expiration": "2021-02-19",
+        "premium": 1.42,
+        "delta": 0.18,
+        "gamma": 0.03,
+        "theta": -0.07,
+        "vega": 0.04,
+        "iv": 1.25
+      },
+      {
+        "type": "call",
+        "strike": 60,
+        "expiration": "2021-02-19",
+        "premium": 0.68,
+        "delta": 0.08,
+        "gamma": 0.01,
+        "theta": -0.04,
+        "vega": 0.03,
+        "iv": 1.40
+      },
+      {
+        "type": "put",
+        "strike": 15,
+        "expiration": "2021-01-29",
+        "premium": 0.72,
+        "delta": -0.15,
+        "gamma": 0.04,
+        "theta": -0.08,
+        "vega": 0.03,
+        "iv": 1.10
+      }
+    ]
+  },
+  "volatilityData": {
+    "iv30": 105.3,
+    "iv60": 98.7,
+    "hv30": 82.6,
+    "ivRank": 78,
+    "ivPercentile": 85
+  },
+  "sentimentData": {
+    "headlines": [
+      "GameStop adds Chewy co-founder Ryan Cohen and two allies to board",
+      "GameStop short interest exceeds 140% of float, highest on record",
+      "Reddit's WallStreetBets forum targets heavily shorted GameStop stock",
+      "Citron Research calls GameStop buyers 'suckers,' sets $20 price target"
+    ],
+    "analystRating": "Sell",
+    "putCallRatio": 0.41
+  },
+  "revealNarrative": "What followed was the most spectacular short squeeze in modern market history. From $19.94 on January 11, GameStop rocketed to an intraday high of $483 on January 28 -- a gain of over 2,300% in just 17 trading days. The move was driven by a perfect storm: massive retail buying coordinated on Reddit, a gamma squeeze as market makers scrambled to hedge call options, and short sellers forced to cover at any price.\n\nThe $25 strike January 29 calls purchased for $1.85 reached intrinsic value of over $458 at the peak -- a return exceeding 24,000%. Even the seemingly crazy $60 strike February calls, bought for $0.68, became worth over $400 in intrinsic value. Brokerages including Robinhood controversially restricted buying of GME on January 28, causing outrage and congressional hearings. Melvin Capital, a prominent hedge fund with a large short position, lost 53% in January and required a $2.75 billion emergency bailout.\n\nHowever, the squeeze was extremely difficult to trade in practice. The stock was halted repeatedly, options spreads were enormous, and the crash was nearly as violent as the rally -- GME fell from $483 to $40 within days. Those who held too long gave back all their gains. This scenario illustrates both the explosive potential of a short squeeze combined with a gamma squeeze, and the extreme difficulty of timing the exit in a parabolic move.",
+  "outcomeData": {
+    "actualDirection": "bullish",
+    "priceMoves": {
+      "1_week": 82.5,
+      "1_month": 1625.0,
+      "3_months": 45.8
+    },
+    "optimalStrategies": [
+      "Long Calls",
+      "Bull Call Spread",
+      "Call Backspread",
+      "Long Stock with Protective Put"
+    ],
+    "optimalTimeframe": "1_month",
+    "bestContractReturn": 24700,
+    "explanation": "The GameStop short squeeze produced some of the largest options returns in history. With 140% short interest and a gamma squeeze from call buying, the stock rose over 2,300% in weeks. The $25 strike calls expiring Jan 29 returned over 24,000%. However, timing was critical -- the stock crashed 92% from its peak within days. Bull call spreads offered a more conservative way to capture the upside while defining risk. This scenario demonstrates the explosive power of combined short and gamma squeezes, but also the extreme difficulty of managing positions in parabolic moves."
+  }
+}

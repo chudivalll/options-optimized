@@ -1,0 +1,101 @@
+{
+  "slug": "fed-rate-banks",
+  "title": "The Fed Tightening Cycle: JPMorgan Chase",
+  "company": "JPM",
+  "companyName": "JPMorgan Chase & Co.",
+  "eventDate": "2022-03-14",
+  "difficulty": "intermediate",
+  "category": "fed",
+  "setupNarrative": "It's March 14, 2022. JPMorgan Chase is trading at $135.78, and the Federal Reserve's FOMC meeting begins tomorrow, March 15-16. After months of insisting inflation was \"transitory,\" the Fed has pivoted hawkishly. CPI has surged to 7.9%, the highest since 1982, and Fed Chair Jerome Powell has all but promised the first rate hike since 2018. The CME FedWatch tool shows a 95% probability of a 25 basis point hike, with markets pricing in six to seven total hikes in 2022.\n\nConventional wisdom says banks benefit from rising rates because it widens their net interest margins -- the spread between what they earn on loans and pay on deposits. JPMorgan's net interest income was $52.3 billion in 2021, and management guided for higher NII as rates rise. The KBW Bank Index has outperformed the S&P 500 by 8 percentage points year-to-date on this thesis. JPM's own Q4 earnings beat expectations, and CEO Jamie Dimon expressed optimism about the rate environment.\n\nHowever, the picture is more nuanced than \"rates up = banks up.\" Rising rates also increase recession risk, which drives up loan losses. The yield curve is flattening dangerously, with the 2-10 spread at just 25 basis points -- a curve inversion would be a recession warning signal that historically hammers bank stocks. Meanwhile, Russia's invasion of Ukraine on February 24 has injected massive uncertainty into global markets. JPMorgan disclosed $1 billion in Russia exposure. Options IV sits at 34%, and the market is torn between the bullish rate narrative and growing macro risks.",
+  "marketData": {
+    "stockPrice": 135.78,
+    "priceChange30d": -5.2,
+    "marketCap": "405B",
+    "sector": "Financial Services",
+    "sectorPerformance": 1.8,
+    "spyPerformance": -6.4
+  },
+  "greeksData": {
+    "contracts": [
+      {
+        "type": "call",
+        "strike": 145,
+        "expiration": "2022-04-14",
+        "premium": 2.45,
+        "delta": 0.25,
+        "gamma": 0.02,
+        "theta": -0.06,
+        "vega": 0.12,
+        "iv": 0.34
+      },
+      {
+        "type": "put",
+        "strike": 125,
+        "expiration": "2022-04-14",
+        "premium": 2.10,
+        "delta": -0.22,
+        "gamma": 0.02,
+        "theta": -0.05,
+        "vega": 0.11,
+        "iv": 0.33
+      },
+      {
+        "type": "call",
+        "strike": 140,
+        "expiration": "2022-06-17",
+        "premium": 5.80,
+        "delta": 0.38,
+        "gamma": 0.01,
+        "theta": -0.04,
+        "vega": 0.18,
+        "iv": 0.32
+      },
+      {
+        "type": "put",
+        "strike": 120,
+        "expiration": "2022-06-17",
+        "premium": 4.15,
+        "delta": -0.22,
+        "gamma": 0.01,
+        "theta": -0.03,
+        "vega": 0.16,
+        "iv": 0.33
+      }
+    ]
+  },
+  "volatilityData": {
+    "iv30": 34.2,
+    "iv60": 32.5,
+    "hv30": 28.6,
+    "ivRank": 55,
+    "ivPercentile": 60
+  },
+  "sentimentData": {
+    "headlines": [
+      "Fed set to raise rates for first time since 2018 amid 7.9% inflation",
+      "Banks rally on rising rate expectations; JPMorgan seen as prime beneficiary",
+      "Yield curve flattens to 25bps as recession fears grow alongside rate hikes",
+      "JPMorgan discloses $1 billion Russia exposure as Ukraine crisis deepens"
+    ],
+    "analystRating": "Buy",
+    "putCallRatio": 0.74
+  },
+  "revealNarrative": "The Fed delivered the expected 25 basis point rate hike on March 16, and initially, the \"banks benefit from rising rates\" thesis played out. JPMorgan rallied to $143 within a week as the market digested the Fed's dot plot showing aggressive tightening ahead. But the rally proved short-lived.\n\nBy late April, reality set in. The yield curve briefly inverted on April 1 (2-year yields exceeded 10-year yields), flashing a recession warning. JPMorgan's Q1 2022 earnings on April 13 showed a $902 million reserve build for expected loan losses -- a reversal from the reserve releases that had boosted 2021 profits. The stock plunged 3.2% on the report. CEO Dimon warned of \"significant\" geopolitical and economic headwinds. By June 17, JPM had fallen to $115 -- a 15.3% decline from our entry point, despite (or because of) the Fed hiking rates at the most aggressive pace in decades.\n\nThe optimal strategy was a straddle or strangle, capturing the initial rally and the subsequent decline. The $145 April calls gained 85% in the first week as JPM rallied, while the $120 June puts gained over 40% by expiration. Those who simply bought calls on the \"rising rates = bullish banks\" thesis were caught in a trap. The lesson: in complex macro environments, the second-order effects (recession risk, loan losses, curve flattening) can overwhelm the first-order thesis (wider net interest margins).",
+  "outcomeData": {
+    "actualDirection": "neutral",
+    "priceMoves": {
+      "1_week": 5.3,
+      "1_month": -4.8,
+      "3_months": -15.3
+    },
+    "optimalStrategies": [
+      "Long Straddle",
+      "Long Strangle",
+      "Put Calendar Spread",
+      "Jade Lizard"
+    ],
+    "optimalTimeframe": "3_months",
+    "bestContractReturn": 185,
+    "explanation": "JPMorgan's price action around the Fed rate hike cycle illustrates the complexity of macro trades. The stock initially rallied 5% on rate hike optimism, then reversed and fell 15% over three months as recession fears, yield curve inversion, and loan loss reserves overwhelmed the net interest margin thesis. A straddle captured both moves, with the short-term call leg profiting first, then the longer-dated put leg paying off. This teaches that consensus macro narratives ('rates up = banks up') often oversimplify, and straddles are valuable when the direction is uncertain but a big move is likely."
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "slug": "zoom-pandemic",
+  "title": "The Pandemic Winner: Zoom Video Communications",
+  "company": "ZM",
+  "companyName": "Zoom Video Communications Inc.",
+  "eventDate": "2020-02-14",
+  "difficulty": "advanced",
+  "category": "pandemic",
+  "setupNarrative": "It's February 14, 2020. Zoom Video Communications is trading at $80.42, up 15% year-to-date and trading well above its June 2019 IPO price of $36. The cloud-based video conferencing company has been one of the top-performing software stocks, powered by a freemium model and a product that users genuinely love. Zoom's fiscal Q3 2020 earnings (reported in December 2019) crushed estimates with 85% revenue growth, and the company raised guidance.\n\nBut Zoom is expensive by any traditional metric. At $80, the stock trades at 40x forward revenue and over 3,000x forward earnings. Bears argue it's a niche video conferencing tool competing against Microsoft Teams (bundled free with Office 365), Google Meet, and Cisco Webex. The total addressable market for video conferencing is estimated at just $43 billion, and enterprise customers are sticky with their existing vendors. Short interest is elevated at 8% of float.\n\nMeanwhile, COVID-19 is spreading beyond China. Cases have appeared in 25 countries, though human-to-human transmission outside China remains limited. The WHO has not declared a pandemic. Few investors are connecting the dots between a potential global health crisis and a video conferencing company. Those who are, however, recognize that if COVID forces widespread remote work, Zoom could be the single biggest beneficiary. The company's product is browser-based, requires no enterprise deployment, and works seamlessly -- exactly what millions of suddenly-remote workers would need. Implied volatility is at 55%, reflecting Zoom's typical high-growth stock volatility rather than any pandemic-specific premium.",
+  "marketData": {
+    "stockPrice": 80.42,
+    "priceChange30d": 12.8,
+    "marketCap": "22.4B",
+    "sector": "Technology",
+    "sectorPerformance": 5.4,
+    "spyPerformance": 3.8
+  },
+  "greeksData": {
+    "contracts": [
+      {
+        "type": "call",
+        "strike": 90,
+        "expiration": "2020-03-20",
+        "premium": 3.15,
+        "delta": 0.28,
+        "gamma": 0.02,
+        "theta": -0.12,
+        "vega": 0.06,
+        "iv": 0.56
+      },
+      {
+        "type": "call",
+        "strike": 100,
+        "expiration": "2020-04-17",
+        "premium": 3.80,
+        "delta": 0.22,
+        "gamma": 0.01,
+        "theta": -0.08,
+        "vega": 0.07,
+        "iv": 0.58
+      },
+      {
+        "type": "call",
+        "strike": 120,
+        "expiration": "2020-06-19",
+        "premium": 4.25,
+        "delta": 0.18,
+        "gamma": 0.008,
+        "theta": -0.05,
+        "vega": 0.09,
+        "iv": 0.60
+      },
+      {
+        "type": "put",
+        "strike": 70,
+        "expiration": "2020-03-20",
+        "premium": 2.40,
+        "delta": -0.20,
+        "gamma": 0.02,
+        "theta": -0.10,
+        "vega": 0.05,
+        "iv": 0.54
+      }
+    ]
+  },
+  "volatilityData": {
+    "iv30": 55.2,
+    "iv60": 52.8,
+    "hv30": 48.6,
+    "ivRank": 42,
+    "ivPercentile": 45
+  },
+  "sentimentData": {
+    "headlines": [
+      "Zoom Video surges 15% YTD on strong earnings and revenue growth",
+      "Microsoft Teams reaches 20 million daily active users, challenging Zoom",
+      "Coronavirus cases spread to 25 countries; WHO warns of pandemic potential",
+      "Remote work tools see uptick in interest as companies plan for business continuity"
+    ],
+    "analystRating": "Hold",
+    "putCallRatio": 0.58
+  },
+  "revealNarrative": "Zoom became the defining stock of the COVID-19 pandemic. As the virus spread globally and governments imposed lockdowns, hundreds of millions of people turned to Zoom for work, school, social gatherings, and even weddings and funerals. The word \"Zoom\" became a verb synonymous with video calling. Daily meeting participants skyrocketed from 10 million in December 2019 to 300 million by April 2020.\n\nThe stock's trajectory was extraordinary. From $80.42 on February 14, Zoom initially dipped to $105 during the broad market selloff in early March but then surged as investors grasped the pandemic's implications. By mid-March, ZM was at $160. By early June, it hit $210. The stock eventually peaked at $588.84 in October 2020 -- a 632% gain from our entry point. The $90 March calls, purchased for $3.15, were worth over $70 at the March 20 expiration as the stock raced past $150 -- a return of 2,122%. The $120 June calls, bought for $4.25, reached over $90 in value -- a return of over 2,017%.\n\nWhat made Zoom special was that it benefited from the pandemic while the broader market crashed. During the March 2020 selloff, when the S&P 500 fell 34%, Zoom actually rallied. This negative correlation made call options even more valuable as portfolio hedges. The lesson: identifying second-order beneficiaries of macro events -- companies that directly profit from the crisis rather than just surviving it -- can produce life-changing options returns. The key was recognizing Zoom's unique positioning before the consensus caught on.",
+  "outcomeData": {
+    "actualDirection": "bullish",
+    "priceMoves": {
+      "1_week": 9.4,
+      "1_month": 48.6,
+      "3_months": 161.2
+    },
+    "optimalStrategies": [
+      "Long Calls",
+      "Bull Call Spread",
+      "LEAPS Calls",
+      "Call Ratio Backspread"
+    ],
+    "optimalTimeframe": "3_months",
+    "bestContractReturn": 2122,
+    "explanation": "Zoom became the ultimate pandemic beneficiary as COVID-19 forced global remote work adoption. The stock rose 161% in three months and eventually 632% from our entry point. The $90 March calls returned 2,122% as daily meeting participants exploded from 10 million to 300 million. Bull call spreads offered defined-risk exposure to the upside, while LEAPS calls captured the multi-month rally. This scenario teaches the power of identifying second-order beneficiaries of macro events and shows that options on high-conviction thematic plays can produce extraordinary returns when the thesis plays out on an accelerated timeline."
+  }
+}

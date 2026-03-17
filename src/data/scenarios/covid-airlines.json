@@ -1,0 +1,100 @@
+{
+  "slug": "covid-airlines",
+  "title": "COVID-19 Hits the Skies: Delta Air Lines",
+  "company": "DAL",
+  "companyName": "Delta Air Lines",
+  "eventDate": "2020-02-20",
+  "difficulty": "beginner",
+  "category": "pandemic",
+  "setupNarrative": "It's February 20, 2020. Delta Air Lines is trading near its all-time highs at $54.32, having rallied steadily throughout 2019 on strong earnings and robust travel demand. The airline industry is enjoying record passenger volumes, and Delta recently reported blowout Q4 2019 earnings with revenue up 6% year-over-year. CEO Ed Bastian called it \"the best year in Delta's history.\"\n\nHowever, a mysterious respiratory illness first reported in Wuhan, China in December is beginning to spread internationally. Cases have now appeared in South Korea, Italy, and Iran. The WHO has not yet declared a pandemic, but airlines with Asian routes are already seeing cancellations. China has locked down Hubei province, and some international carriers have suspended flights to mainland China.\n\nThe options market is starting to price in uncertainty. Implied volatility on DAL options has crept up from its 30-day average of 22% to around 32%, though it remains well below crisis levels. The put/call ratio has ticked higher but isn't flashing alarm bells yet. Most Wall Street analysts maintain their Buy ratings, arguing that any travel disruption will be short-lived, similar to SARS in 2003. The question is: will history repeat, or is this time different?",
+  "marketData": {
+    "stockPrice": 54.32,
+    "priceChange30d": 2.8,
+    "marketCap": "35.2B",
+    "sector": "Airlines",
+    "sectorPerformance": -1.4,
+    "spyPerformance": 3.1
+  },
+  "greeksData": {
+    "contracts": [
+      {
+        "type": "put",
+        "strike": 50,
+        "expiration": "2020-03-20",
+        "premium": 0.85,
+        "delta": -0.18,
+        "gamma": 0.03,
+        "theta": -0.04,
+        "vega": 0.06,
+        "iv": 0.34
+      },
+      {
+        "type": "put",
+        "strike": 45,
+        "expiration": "2020-03-20",
+        "premium": 0.32,
+        "delta": -0.08,
+        "gamma": 0.02,
+        "theta": -0.02,
+        "vega": 0.04,
+        "iv": 0.36
+      },
+      {
+        "type": "call",
+        "strike": 58,
+        "expiration": "2020-03-20",
+        "premium": 0.74,
+        "delta": 0.22,
+        "gamma": 0.03,
+        "theta": -0.04,
+        "vega": 0.06,
+        "iv": 0.31
+      },
+      {
+        "type": "put",
+        "strike": 40,
+        "expiration": "2020-04-17",
+        "premium": 0.55,
+        "delta": -0.08,
+        "gamma": 0.01,
+        "theta": -0.02,
+        "vega": 0.05,
+        "iv": 0.35
+      }
+    ]
+  },
+  "volatilityData": {
+    "iv30": 32.4,
+    "iv60": 29.8,
+    "hv30": 22.1,
+    "ivRank": 45,
+    "ivPercentile": 52
+  },
+  "sentimentData": {
+    "headlines": [
+      "Delta Air Lines reports record 2019 profits, raises dividend 15%",
+      "Coronavirus fears grow as cases appear outside China; airlines monitor impact",
+      "U.S. airlines see limited exposure to China virus, maintain guidance",
+      "Travel stocks dip as WHO warns of pandemic potential"
+    ],
+    "analystRating": "Buy",
+    "putCallRatio": 0.82
+  },
+  "revealNarrative": "The COVID-19 pandemic turned into the worst crisis in aviation history. Within weeks of February 20, the virus spread globally, and governments imposed unprecedented travel restrictions. By mid-March, the U.S. declared a national emergency, and Delta announced it would cut capacity by 70% -- the largest reduction in the airline's history.\n\nDelta's stock plummeted from $54.32 to under $17 by March 19, 2020 -- a devastating 69% decline in less than a month. The airline burned through $100 million per day at the worst point. The $50 strike puts purchased for $0.85 surged in value as the stock crashed through strike after strike, with the $50 puts reaching intrinsic value of over $33 at the bottom. Even the deep out-of-the-money $40 April puts, purchased for just $0.55, became worth over $23 -- a return exceeding 4,000%.\n\nThe lesson was clear: when a true black swan event hits a highly leveraged, operationally sensitive industry like airlines, the downside can be far more extreme than the options market prices in. Those who recognized the pandemic risk early and bought puts -- even modestly out-of-the-money ones -- saw extraordinary returns. The elevated but not extreme IV at the time of entry meant put protection was still relatively affordable compared to the magnitude of the eventual move.",
+  "outcomeData": {
+    "actualDirection": "bearish",
+    "priceMoves": {
+      "1_week": -18.5,
+      "1_month": -62.4,
+      "3_months": -44.2
+    },
+    "optimalStrategies": [
+      "Long Puts",
+      "Bear Put Spread",
+      "Put Backspread"
+    ],
+    "optimalTimeframe": "1_month",
+    "bestContractReturn": 4081,
+    "explanation": "The COVID-19 pandemic caused an unprecedented collapse in air travel demand. Deep out-of-the-money puts delivered extraordinary returns as DAL fell from $54 to $17. The $40 April puts purchased for $0.55 reached over $23 in intrinsic value. Even the nearer-term $50 March puts returned over 3,800%. This scenario demonstrates how pandemic risk in travel-dependent industries can create outsized returns for protective put positions, and why seemingly cheap OTM puts can be the best risk/reward in a tail-risk event."
+  }
+}

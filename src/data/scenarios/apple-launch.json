@@ -1,0 +1,101 @@
+{
+  "slug": "apple-launch",
+  "title": "iPhone 14 Launch: Buy the Rumor, Sell the News?",
+  "company": "AAPL",
+  "companyName": "Apple Inc.",
+  "eventDate": "2022-09-07",
+  "difficulty": "beginner",
+  "category": "earnings",
+  "setupNarrative": "It's September 7, 2022, and Apple is set to hold its annual fall product launch event today at Apple Park in Cupertino. The stock is trading at $155.81, having recovered impressively from its June 2022 lows near $129. Apple's \"Far Out\" event is expected to unveil the iPhone 14 lineup, the Apple Watch Series 8, and updated AirPods Pro. Leaks and rumors have been circulating for months -- virtually every feature of the iPhone 14 is already known.\n\nThis is a classic \"buy the rumor, sell the news\" setup. Apple product launches have historically been non-events for the stock. Over the past five iPhone launches, Apple shares moved an average of just 0.8% in the week following the announcement. The iPhone 14 lineup is expected to be an incremental upgrade: the base model will reportedly keep the A15 chip while the Pro models get the new A16 Bionic. The rumored Dynamic Island notch replacement for Pro models is the main differentiator.\n\nImplied volatility on near-term options has spiked to 35%, well above Apple's typical 25% realized volatility. This creates an IV crush opportunity -- if the stock doesn't move significantly after the event (as history suggests), option sellers win. The premium embedded in at-the-money straddles implies a 3.5% move, but Apple typically delivers less than half that around product launches. Institutional options flow shows large straddle and strangle sales by sophisticated traders betting on the IV crush. Is this one of those times where the smart play is selling options into the hype?",
+  "marketData": {
+    "stockPrice": 155.81,
+    "priceChange30d": 4.2,
+    "marketCap": "2.49T",
+    "sector": "Technology",
+    "sectorPerformance": 1.5,
+    "spyPerformance": -1.2
+  },
+  "greeksData": {
+    "contracts": [
+      {
+        "type": "call",
+        "strike": 160,
+        "expiration": "2022-09-16",
+        "premium": 2.35,
+        "delta": 0.35,
+        "gamma": 0.04,
+        "theta": -0.15,
+        "vega": 0.08,
+        "iv": 0.36
+      },
+      {
+        "type": "put",
+        "strike": 150,
+        "expiration": "2022-09-16",
+        "premium": 1.95,
+        "delta": -0.30,
+        "gamma": 0.03,
+        "theta": -0.14,
+        "vega": 0.07,
+        "iv": 0.35
+      },
+      {
+        "type": "call",
+        "strike": 165,
+        "expiration": "2022-09-16",
+        "premium": 0.82,
+        "delta": 0.15,
+        "gamma": 0.02,
+        "theta": -0.09,
+        "vega": 0.05,
+        "iv": 0.37
+      },
+      {
+        "type": "put",
+        "strike": 145,
+        "expiration": "2022-09-16",
+        "premium": 0.65,
+        "delta": -0.12,
+        "gamma": 0.02,
+        "theta": -0.07,
+        "vega": 0.04,
+        "iv": 0.36
+      }
+    ]
+  },
+  "volatilityData": {
+    "iv30": 35.1,
+    "iv60": 30.4,
+    "hv30": 25.8,
+    "ivRank": 48,
+    "ivPercentile": 42
+  },
+  "sentimentData": {
+    "headlines": [
+      "Apple 'Far Out' event: Everything we expect from iPhone 14 launch",
+      "iPhone 14 Pro rumored to feature Dynamic Island, always-on display",
+      "Apple stock rallies into product event as September seasonality kicks in",
+      "Options traders bet Apple stock won't move much after iPhone launch"
+    ],
+    "analystRating": "Buy",
+    "putCallRatio": 0.62
+  },
+  "revealNarrative": "Apple's September 7 event played out almost exactly as expected. The company unveiled the iPhone 14 lineup with the Dynamic Island on Pro models, Apple Watch Series 8 with crash detection, and updated AirPods Pro. There were no major surprises. The stock closed at $155.96 on September 7, up a mere 0.1% -- barely a ripple.\n\nOver the next week, Apple drifted slightly lower to $152.37, a decline of just 2.2%. The stock remained range-bound, never threatening either the $160 call strikes or the $145 put strikes. Implied volatility collapsed from 35% to 24% within two days of the event -- a textbook IV crush. The $160 call purchased for $2.35 fell to $0.28, losing 88% of its value. The $150 put purchased for $1.95 fell to $0.95 despite the stock being slightly lower, because the IV collapse more than offset the directional move.\n\nSellers of the at-the-money straddle (selling both the $155 call and $155 put) collected over $5.20 in premium and kept nearly all of it. Those who sold the $160/$145 strangle kept 100% of premium as both strikes expired worthless. This scenario perfectly illustrates IV crush: when implied volatility is inflated ahead of a known event and the stock doesn't move enough to justify the premium, option buyers lose and option sellers win. Recognizing these setups is a critical skill for any options trader.",
+  "outcomeData": {
+    "actualDirection": "neutral",
+    "priceMoves": {
+      "1_week": -2.2,
+      "1_month": -8.1,
+      "3_months": -4.5
+    },
+    "optimalStrategies": [
+      "Short Straddle",
+      "Short Strangle",
+      "Iron Condor",
+      "Iron Butterfly"
+    ],
+    "optimalTimeframe": "1_week",
+    "bestContractReturn": 88,
+    "explanation": "The iPhone 14 launch was a textbook IV crush scenario. With no surprises at the event and the stock moving only 0.1% on launch day, inflated implied volatility collapsed from 35% to 24%. Option buyers were crushed as both calls and puts lost most of their value despite minimal stock movement. The iron condor and short strangle strategies captured the premium decay perfectly. This teaches that well-telegraphed events with predictable outcomes often present better opportunities for option sellers than buyers, and that understanding IV crush is essential for options trading around known catalysts."
+  }
+}

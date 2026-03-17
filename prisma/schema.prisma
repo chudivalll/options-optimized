@@ -1,0 +1,163 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String         @id @default(cuid())
+  name         String?
+  email        String         @unique
+  password     String
+  totalScore   Int            @default(0)
+  streak       Int            @default(0)
+  lastActiveAt DateTime?
+  createdAt    DateTime       @default(now())
+  predictions  Prediction[]
+  progress     UserProgress[]
+  badges       UserBadge[]
+  watchlist    WatchlistItem[]
+  patternMatches PatternMatch[]
+}
+
+model LearningModule {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  description String
+  order       Int
+  difficulty  String
+  lessons     Lesson[]
+}
+
+model Lesson {
+  id       String         @id @default(cuid())
+  moduleId String
+  module   LearningModule @relation(fields: [moduleId], references: [id])
+  slug     String         @unique
+  title    String
+  content  String
+  order    Int
+  quizData String
+  progress UserProgress[]
+}
+
+model Scenario {
+  id              String       @id @default(cuid())
+  slug            String       @unique
+  title           String
+  company         String
+  companyName     String
+  exchange        String       @default("NYSE")
+  eventDate       String
+  difficulty      String
+  category        String
+  setupNarrative  String
+  revealNarrative String
+  marketData      String
+  greeksData      String
+  volatilityData  String
+  sentimentData   String
+  outcomeData     String
+  imageUrl        String?
+  predictions     Prediction[]
+  patternMatches  PatternMatch[]
+}
+
+model WatchlistItem {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  ticker      String
+  addedAt     DateTime @default(now())
+  notes       String?
+
+  @@unique([userId, ticker])
+}
+
+model TickerSnapshot {
+  id                String   @id @default(cuid())
+  ticker            String   @unique
+  companyName       String
+  exchange          String   @default("NYSE")
+  sector            String
+  stockPrice        Float
+  priceChange30d    Float
+  marketCap         String
+  sectorPerformance Float    @default(0)
+  spyPerformance    Float    @default(0)
+  greeksData        String
+  volatilityData    String
+  sentimentData     String
+  snapshotDate      String
+  updatedAt         DateTime @default(now())
+}
+
+model PatternMatch {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  ticker          String
+  scenarioId      String
+  scenario        Scenario @relation(fields: [scenarioId], references: [id])
+  similarityScore Float
+  breakdown       String
+  createdAt       DateTime @default(now())
+
+  @@unique([userId, ticker, scenarioId])
+}
+
+model Prediction {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
+  scenarioId String
+  scenario   Scenario @relation(fields: [scenarioId], references: [id])
+  direction  String
+  strategy   String
+  timeframe  String
+  confidence Int
+  reasoning  String?
+  score      Int      @default(0)
+  maxScore   Int      @default(100)
+  createdAt  DateTime @default(now())
+
+  @@unique([userId, scenarioId])
+}
+
+model UserProgress {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id])
+  lessonId    String
+  lesson      Lesson    @relation(fields: [lessonId], references: [id])
+  completed   Boolean   @default(false)
+  quizScore   Int?
+  completedAt DateTime?
+
+  @@unique([userId, lessonId])
+}
+
+model Badge {
+  id          String      @id @default(cuid())
+  slug        String      @unique
+  name        String
+  description String
+  criteria    String
+  imageUrl    String?
+  users       UserBadge[]
+}
+
+model UserBadge {
+  id       String   @id @default(cuid())
+  userId   String
+  user     User     @relation(fields: [userId], references: [id])
+  badgeId  String
+  badge    Badge    @relation(fields: [badgeId], references: [id])
+  earnedAt DateTime @default(now())
+
+  @@unique([userId, badgeId])
+}
