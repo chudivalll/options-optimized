@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Options Optimized — Learn Options Trading Through Real Scenarios",
+  title: "Options Pulse — Learn Options Trading Through Real Scenarios",
   description:
     "Master options trading by analyzing real historical market events. Learn the Greeks, understand IV, and test your skills with scored predictions.",
 };

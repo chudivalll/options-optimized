@@ -61,7 +61,7 @@ export default function LoginPage() {
         <div className="bg-white rounded-2xl shadow-lg border border-gray-200/60 p-8">
           <div className="text-center mb-8">
             <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-[0_0_16px_rgba(59,130,246,0.3)]">
-              <span className="text-white font-bold text-lg">OO</span>
+              <span className="text-white font-bold text-lg">OP</span>
             </div>
             <h1 className="text-2xl font-bold text-gray-900">
               {isRegister ? "Create Account" : "Welcome Back"}

@@ -25,9 +25,9 @@ export default function Nav() {
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-2">
               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center shadow-[0_0_12px_rgba(59,130,246,0.4)]">
-                <span className="text-white font-bold text-sm">OO</span>
+                <span className="text-white font-bold text-sm">OP</span>
               </div>
-              <span className="font-bold text-xl text-gray-900">Options Optimized</span>
+              <span className="font-bold text-xl text-gray-900">Options Pulse</span>
             </Link>
 
             {session && (
